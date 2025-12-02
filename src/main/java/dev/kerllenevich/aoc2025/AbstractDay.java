@@ -3,6 +3,7 @@ package dev.kerllenevich.aoc2025;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 
 public abstract class AbstractDay {
     private final int day;
@@ -24,6 +25,12 @@ public abstract class AbstractDay {
 
     protected final InputStream inputStream() {
         return getClass().getResourceAsStream(filename);
+    }
+
+    protected final String string() throws IOException {
+        try (InputStream stream = inputStream()) {
+            return new String(stream.readAllBytes(), StandardCharsets.UTF_8);
+        }
     }
 
     protected abstract String part1() throws IOException;

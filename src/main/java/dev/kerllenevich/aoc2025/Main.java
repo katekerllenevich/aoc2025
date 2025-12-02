@@ -1,6 +1,7 @@
 package dev.kerllenevich.aoc2025;
 
 import dev.kerllenevich.aoc2025.days.Day1;
+import dev.kerllenevich.aoc2025.days.Day2;
 
 import java.util.Scanner;
 
@@ -69,6 +70,7 @@ public class Main {
 
     private static void registerDays() {
         days[0] = new Day1();
+        days[1] = new Day2();
     }
 
     private static ParsedInput parse(String input) {
