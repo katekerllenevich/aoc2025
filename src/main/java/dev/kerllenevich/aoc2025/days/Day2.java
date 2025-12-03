@@ -40,6 +40,21 @@ public class Day2 extends AbstractDay {
 
     @Override
     protected String part2() throws IOException {
-        throw new UnsupportedOperationException();
+        long sum = 0;
+
+        for (String ranges : string().split(",")) {
+            long low = Long.parseLong(ranges.split("-")[0]);
+            long high = Long.parseLong(ranges.split("-")[1]);
+
+            for (long i = low; i <= high; i++) {
+               String string = String.valueOf(i);
+               if (string.matches("^(.+)\\1+$")) {
+                   sum += i;
+               }
+            }
+        }
+
+        return String.valueOf(sum);
     }
 }
+
