@@ -4,6 +4,7 @@ import dev.kerllenevich.aoc2025.days.Day1;
 import dev.kerllenevich.aoc2025.days.Day2;
 import dev.kerllenevich.aoc2025.days.Day3;
 import dev.kerllenevich.aoc2025.days.Day4;
+import dev.kerllenevich.aoc2025.days.Day5;
 
 import java.util.Scanner;
 
@@ -75,6 +76,7 @@ public class Main {
         days[1] = new Day2();
         days[2] = new Day3();
         days[3] = new Day4();
+        days[4] = new Day5();
     }
 
     private static ParsedInput parse(String input) {
