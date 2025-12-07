@@ -1,6 +1,5 @@
 package dev.kerllenevich.aoc2025;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
