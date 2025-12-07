@@ -21,9 +21,9 @@ public class Day1 extends AbstractDay {
             String line;
             while ((line = reader.readLine()) != null) {
                 if (line.charAt(0) == 'L') {
-                    pos -= Integer.valueOf(line.substring(1));
+                    pos -= Integer.parseInt(line.substring(1));
                 } else if (line.charAt(0) == 'R') {
-                    pos += Integer.valueOf(line.substring(1));
+                    pos += Integer.parseInt(line.substring(1));
                 }
 
                 pos = ((pos % 100) + 100) % 100;
@@ -46,7 +46,7 @@ public class Day1 extends AbstractDay {
             while ((line = reader.readLine()) != null) {
                 boolean left = line.charAt(0) == 'L';
 
-                for (int times = Integer.valueOf(line.substring(1)); times > 0; times--) {
+                for (int times = Integer.parseInt(line.substring(1)); times > 0; times--) {
                     pos += left ? -1 : 1;
                     pos = ((pos % 100) + 100) % 100;
 

@@ -2,14 +2,10 @@ package dev.kerllenevich.aoc2025.days;
 
 import dev.kerllenevich.aoc2025.AbstractDay;
 
-import java.awt.desktop.SystemSleepEvent;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 
 public class Day6 extends AbstractDay {
@@ -18,7 +14,7 @@ public class Day6 extends AbstractDay {
         super(6);
     }
 
-    private class Operation {
+    private static class Operation {
         OperationType type = null;
         ArrayList<Long> nums =  new ArrayList<>();
     }
@@ -75,8 +71,7 @@ public class Day6 extends AbstractDay {
         List<Operation> operations = new ArrayList<>();
         Operation current = null;
 
-        for (int x = 0; x < matrix.length; x++) {
-            char[] line = matrix[x];
+        for (char[] line : matrix) {
             char op = line[line.length - 1];
             if (op == '*' || op == '+') {
                 if (current != null) operations.add(current);

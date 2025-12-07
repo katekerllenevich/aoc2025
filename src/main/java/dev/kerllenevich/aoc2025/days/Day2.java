@@ -2,11 +2,7 @@ package dev.kerllenevich.aoc2025.days;
 
 import dev.kerllenevich.aoc2025.AbstractDay;
 
-import javax.naming.OperationNotSupportedException;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.math.BigInteger;
 
 public class Day2 extends AbstractDay {
 

@@ -6,7 +6,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.stream.Stream;
 
 public class Day3 extends AbstractDay {
 
@@ -70,16 +69,12 @@ public class Day3 extends AbstractDay {
                     for (int j = 0; j < window.length; j++) {
                         // check starting at this point in the window
                         // is the value greater than in the values array
-                        int offset = j;
-
-                        for (int k = offset; k < window.length; k++) {
+                        for (int k = j; k < window.length; k++) {
                             if (window[k] > values[k]) {
                                 values[k] = window[k];
 
                                 // if it is, then update the rest of the array
-                                for (int x = k; x < window.length; x++) {
-                                    values[x] = window[x];
-                                }
+                                System.arraycopy(window, k, values, k, window.length - k);
 
                                 break; // next loop
                             }

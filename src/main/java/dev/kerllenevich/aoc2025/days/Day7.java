@@ -3,8 +3,6 @@ package dev.kerllenevich.aoc2025.days;
 import dev.kerllenevich.aoc2025.AbstractDay;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 

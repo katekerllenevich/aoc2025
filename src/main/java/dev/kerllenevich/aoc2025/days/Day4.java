@@ -2,14 +2,8 @@ package dev.kerllenevich.aoc2025.days;
 
 import dev.kerllenevich.aoc2025.AbstractDay;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Day4 extends AbstractDay {
 
@@ -20,15 +14,7 @@ public class Day4 extends AbstractDay {
     @Override
     protected String part1() throws IOException {
         int total = 0;
-
-        List<String> lines = string().lines().toList();
-        boolean[][] matrix = new boolean[lines.size()][lines.getFirst().length()];
-
-        for (int i = 0; i < lines.size(); i++) {
-            for (int j = 0; j < lines.size(); j++) {
-                matrix[i][j] = lines.get(i).charAt(j) == '@';
-            }
-        }
+        boolean[][] matrix = matrix(string().lines().toList());
 
         for (int y = 0; y < matrix.length; y++) {
             boolean[] row = matrix[y];
@@ -50,15 +36,7 @@ public class Day4 extends AbstractDay {
     @Override
     protected String part2() throws IOException {
         int total = 0;
-
-        List<String> lines = string().lines().toList();
-        boolean[][] matrix = new boolean[lines.size()][lines.getFirst().length()];
-
-        for (int i = 0; i < lines.size(); i++) {
-            for (int j = 0; j < lines.size(); j++) {
-                matrix[i][j] = lines.get(i).charAt(j) == '@';
-            }
-        }
+        boolean[][] matrix = matrix(string().lines().toList());
 
         int lastRemoved = -1;
         while (lastRemoved != 0) {
@@ -88,6 +66,18 @@ public class Day4 extends AbstractDay {
         }
 
         return String.valueOf(total);
+    }
+
+    private static boolean[][] matrix(List<String> lines) {
+        boolean[][] matrix = new boolean[lines.size()][lines.getFirst().length()];
+
+        for (int i = 0; i < lines.size(); i++) {
+            for (int j = 0; j < lines.size(); j++) {
+                matrix[i][j] = lines.get(i).charAt(j) == '@';
+            }
+        }
+
+        return matrix;
     }
 
     private static int getOccupied(int y, int x, boolean[][] matrix) {
